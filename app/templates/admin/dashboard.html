@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block title %}College Dashboard | CampusTrack{% endblock %}{% block content %}
+<div class="page-heading"><div><span class="eyebrow">COLLEGE WORKSPACE</span><h1>{{ college.name }}</h1><p>{{ college.code }} · Live overview from your college database</p></div><span class="status active">{{ college.status }}</span></div>
+<div class="stats-grid">
+<div class="stat-card"><span>Students</span><strong>{{ students_count }}</strong><small>Registered student profiles</small></div>
+<div class="stat-card"><span>Job openings</span><strong>{{ jobs_count }}</strong><small>All recorded openings</small></div>
+<div class="stat-card"><span>Applications</span><strong>{{ applications_count }}</strong><small>Student job applications</small></div>
+<div class="stat-card"><span>Accepted / selected</span><strong>{{ accepted_count }}</strong><small>Application workflow</small></div>
+<div class="stat-card"><span>Rejected applications</span><strong>{{ rejected_count }}</strong><small>Applications marked rejected</small></div>
+<div class="stat-card"><span>Placement rate</span><strong>{{ summary.placement_rate }}%</strong><small>Unique placed / active students</small></div>
+</div>
+<div class="dashboard-grid"><a class="action-card" href="{{ url_for('admin.structure') }}"><span>01</span><h3>College structure</h3><p>Manage departments, branches and sections.</p></a><a class="action-card" href="{{ url_for('admin.students') }}"><span>02</span><h3>Student accounts</h3><p>Add students; accounts are saved to MySQL.</p></a><a class="action-card" href="{{ url_for('admin.analytics') }}"><span>03</span><h3>Overview analytics</h3><p>View application and package charts.</p></a><a class="action-card" href="{{ url_for('admin.recruitment') }}"><span>04</span><h3>Recruitment</h3><p>Manage jobs, applications and outcomes.</p></a></div>
+{% endblock %}

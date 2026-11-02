@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Students | CampusTrack{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">STUDENT DIRECTORY</span><h1>Student records</h1><p>{{ college.name }} · New records are saved directly to this college's MySQL database.</p></div></div>
+{% if created_credentials %}
+<section class="panel" style="border:2px solid #16a34a;margin-bottom:1.25rem"><div class="panel-heading"><h2>Student created successfully</h2></div><div style="padding:1rem">
+<p>The account and student profile have been saved. Copy the temporary password now; it is shown only on this confirmation screen and is not stored as plain text.</p>
+<p><strong>Login username / roll number:</strong> {{ created_credentials.roll_no }}</p>
+{% if created_credentials.email %}<p><strong>Email:</strong> {{ created_credentials.email }}</p>{% endif %}
+<p><strong>Temporary password:</strong> <code id="new-student-password">{{ created_credentials.temporary_password }}</code> <button type="button" class="button" onclick="navigator.clipboard.writeText(document.getElementById('new-student-password').innerText)">Copy password</button></p>
+<p class="small muted">The student must change this password at first login. Share it privately.</p></div></section>
+{% endif %}
+<div class="two-column">
+<form class="form-card" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><h2>Add student</h2>
+<p class="small muted">The student profile and login account are saved together in one database transaction.</p>
+<label>Full name *</label><input name="full_name" required maxlength="160">
+<label>Roll number / login username *</label><input name="roll_no" required maxlength="50" placeholder="24AIML001"><p class="small muted">The roll number automatically becomes the student's login username.</p>
+<label>Student email</label><input name="email" type="email" maxlength="254" placeholder="student@college.edu">
+<label>Phone number</label><input name="phone" type="tel" maxlength="30">
+<label>Section</label><select name="section_id"><option value="">Not assigned</option>{% for sec in sections %}<option value="{{ sec.id }}">{{ sec.branch.name }} — {{ sec.name }} ({{ sec.academic_year }})</option>{% endfor %}</select>
+<label>Admission year</label><input name="admission_year" type="number" min="2000" max="2100" placeholder="2025">
+<label>Graduation year</label><input name="graduation_year" type="number" min="2000" max="2100" placeholder="2029">
+<label>Current semester</label><input name="current_semester" type="number" min="1" max="12" placeholder="3">
+<p class="small muted">A random 20-character temporary password is generated automatically. The student must change it at first login.</p>
+<button class="button primary full" type="submit">Save student to database</button></form>
+<section class="panel"><div class="panel-heading"><h2>Students ({{ students|length }})</h2></div><div class="table-wrap"><table><thead><tr><th>Roll number</th><th>Name / Email</th><th>Section</th><th>Graduation</th></tr></thead><tbody>
+{% for student in students %}<tr><td><span class="pill">{{ student.roll_no }}</span></td><td>{{ student.full_name }}<small class="table-sub">{{ student.email or 'No email' }}</small></td><td>{{ student.section.name if student.section else 'Unassigned' }}</td><td>{{ student.graduation_year or '—' }}</td></tr>{% else %}<tr><td colspan="4">No students added yet.</td></tr>{% endfor %}
+</tbody></table></div></section></div>
+{% endblock %}

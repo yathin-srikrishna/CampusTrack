@@ -1,0 +1,31 @@
+roll_no,full_name,email,gender,college_code,college_name,phone,admission_year,graduation_year
+100,Aarav Reddy,100.aarav.reddy@example.test,M,DEMO01,Demo Institute of Technology,900000100,2023,2027
+101,Ananya Sharma,101.ananya.sharma@example.test,F,DEMO01,Demo Institute of Technology,900000101,2023,2027
+102,Vihaan Kumar,102.vihaan.kumar@example.test,M,DEMO01,Demo Institute of Technology,900000102,2023,2027
+103,Diya Patel,103.diya.patel@example.test,F,DEMO01,Demo Institute of Technology,900000103,2023,2027
+104,Arjun Nair,104.arjun.nair@example.test,M,DEMO01,Demo Institute of Technology,900000104,2023,2027
+105,Saanvi Rao,105.saanvi.rao@example.test,F,DEMO01,Demo Institute of Technology,900000105,2023,2027
+106,Aditya Verma,106.aditya.verma@example.test,M,DEMO01,Demo Institute of Technology,900000106,2023,2027
+107,Ishita Singh,107.ishita.singh@example.test,F,DEMO01,Demo Institute of Technology,900000107,2023,2027
+108,Reyansh Gupta,108.reyansh.gupta@example.test,M,DEMO01,Demo Institute of Technology,900000108,2023,2027
+109,Myra Joshi,109.myra.joshi@example.test,F,DEMO01,Demo Institute of Technology,900000109,2023,2027
+110,Krishna Varma,110.krishna.varma@example.test,M,DEMO02,Demo Valley Engineering College,900000110,2023,2027
+111,Aadhya Das,111.aadhya.das@example.test,F,DEMO02,Demo Valley Engineering College,900000111,2023,2027
+112,Sai Teja,112.sai.teja@example.test,M,DEMO02,Demo Valley Engineering College,900000112,2023,2027
+113,Pavani Reddy,113.pavani.reddy@example.test,F,DEMO02,Demo Valley Engineering College,900000113,2023,2027
+114,Rohan Mehta,114.rohan.mehta@example.test,M,DEMO02,Demo Valley Engineering College,900000114,2023,2027
+115,Kavya Iyer,115.kavya.iyer@example.test,F,DEMO02,Demo Valley Engineering College,900000115,2023,2027
+116,Nikhil Das,116.nikhil.das@example.test,M,DEMO02,Demo Valley Engineering College,900000116,2023,2027
+117,Anika Shah,117.anika.shah@example.test,F,DEMO02,Demo Valley Engineering College,900000117,2023,2027
+118,Vikram Yadav,118.vikram.yadav@example.test,M,DEMO02,Demo Valley Engineering College,900000118,2023,2027
+119,Tanvi Kulkarni,119.tanvi.kulkarni@example.test,F,DEMO02,Demo Valley Engineering College,900000119,2023,2027
+120,Karthik Naidu,120.karthik.naidu@example.test,M,DEMO03,Demo Coastal University,900000120,2023,2027
+121,Pranavi Rao,121.pranavi.rao@example.test,F,DEMO03,Demo Coastal University,900000121,2023,2027
+122,Manav Jain,122.manav.jain@example.test,M,DEMO03,Demo Coastal University,900000122,2023,2027
+123,Aarohi Bose,123.aarohi.bose@example.test,F,DEMO03,Demo Coastal University,900000123,2023,2027
+124,Harsha Vardhan,124.harsha.vardhan@example.test,M,DEMO03,Demo Coastal University,900000124,2023,2027
+125,Navya Reddy,125.navya.reddy@example.test,F,DEMO03,Demo Coastal University,900000125,2023,2027
+126,Dhruv Malhotra,126.dhruv.malhotra@example.test,M,DEMO03,Demo Coastal University,900000126,2023,2027
+127,Keerthi Menon,127.keerthi.menon@example.test,F,DEMO03,Demo Coastal University,900000127,2023,2027
+128,Abhinav Pillai,128.abhinav.pillai@example.test,M,DEMO03,Demo Coastal University,900000128,2023,2027
+129,Meera Mishra,129.meera.mishra@example.test,F,DEMO03,Demo Coastal University,900000129,2023,2027

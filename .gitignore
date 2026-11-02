@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+instance/*
+!instance/.gitkeep
+uploads/**
+!uploads/.gitkeep
+reports/*
+!reports/.gitkeep
+.pytest_cache/
+
+# Demo credentials are for local testing only; do not commit them.
+setup/demo_credentials.csv
+setup/demo_admin_credentials.csv

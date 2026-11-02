@@ -1,0 +1,19 @@
+{% extends 'base.html' %}{% block title %}Register College | CampusTrack{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">NEW TENANT ONBOARDING</span><h1>Register your college</h1><p>Creates a separate college workspace, starter academic structure and its first College Admin account in MySQL.</p></div></div>
+<div class="two-column">
+<form class="form-card" method="post">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<h2>College information</h2>
+<label>College name *</label><input name="name" required maxlength="200" placeholder="Example Institute of Technology">
+<label>Unique college code *</label><input name="code" required maxlength="30" placeholder="EXAMPLE01">
+<label>Official college email *</label><input type="email" name="official_email" required maxlength="254" placeholder="office@example.edu">
+<h2>First College Admin account</h2>
+<label>Admin username or email *</label><input name="admin_username" required maxlength="254" autocomplete="username">
+<label>Password *</label><input type="password" name="password" required minlength="12" autocomplete="new-password"><small class="muted">Use at least 12 characters.</small>
+<label>Confirm password *</label><input type="password" name="confirm_password" required minlength="12" autocomplete="new-password">
+<button class="button primary full" type="submit">Create college and admin account</button>
+<p class="small muted">Choose a unique college code and administrator username. Registration creates the records in one transaction, so a failure will not leave a partial college.</p>
+</form>
+<section class="panel"><h2>What gets created?</h2><div class="stack-list"><div class="list-row"><strong>College workspace</strong><span class="pill">1</span></div><div class="list-row"><strong>College Admin account</strong><span class="pill">1</span></div><div class="list-row"><strong>Starter department</strong><span class="pill">CSE</span></div><div class="list-row"><strong>Starter branch</strong><span class="pill">AIML</span></div><div class="list-row"><strong>Sections</strong><span class="pill">A and B</span></div><div class="list-row"><strong>Semester records</strong><span class="pill">1–8</span></div></div><p class="small muted">The new college starts with no fictional student marks, resumes or applications. Add real student records and upload their documents through the college portal.</p></section>
+</div>{% endblock %}

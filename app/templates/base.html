@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}CampusTrack{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url_for('main.home') }}"><span class="brand-mark">C</span> CampusTrack</a>
+  <nav>
+    {% if current_user.is_authenticated %}
+      {% if current_user.role == 'student' %}
+        <a href="{{ url_for('student.dashboard') }}">My Dashboard</a><a href="{{ url_for('student.jobs') }}">Jobs</a>
+      {% else %}
+        <a href="{{ url_for('admin.dashboard') }}">Dashboard</a>
+        {% if current_user.role == 'super_admin' %}<a href="{{ url_for('admin.colleges') }}">Colleges</a>{% endif %}
+        {% if current_user.role == 'college_admin' %}<a href="{{ url_for('admin.structure') }}">College Structure</a><a href="{{ url_for('admin.students') }}">Students</a>{% endif %}{% if current_user.role in ['college_admin', 'faculty'] %}<a href="{{ url_for('admin.academics') }}">Academics</a><a href="{{ url_for('admin.attendance') }}">Attendance</a>{% endif %}
+        {% if current_user.role in ['college_admin', 'placement_officer'] %}<a href="{{ url_for('admin.analytics') }}">Analytics</a><a href="{{ url_for('admin.recruitment') }}">Recruitment</a>{% endif %}
+      {% endif %}
+      <form class="inline-form" method="post" action="{{ url_for('auth.logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="nav-button" type="submit">Sign out</button></form>
+    {% else %}<a href="{{ url_for('auth.login') }}">Login</a><a class="button primary nav-cta" href="{{ url_for('main.register_college') }}">Add College</a>{% endif %}
+  </nav>
+</header>
+<main class="page-shell">
+  {% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="flash-stack">{% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="footer">CampusTrack · Student Academic & Placement Management · Secure multi-college workspace</footer>
+</body></html>

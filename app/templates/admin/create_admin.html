@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Create College Admin | CampusTrack{% endblock %}{% block content %}
+<div class="page-heading"><div><span class="eyebrow">ACCOUNT PROVISIONING</span><h1>Create College Admin</h1><p>{{ college.name }} · {{ college.code }}</p></div></div>
+<form class="form-card narrow-card" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Admin username / email</label><input name="username" type="email" maxlength="254" required placeholder="admin@college.edu"><label>Temporary password</label><input name="password" type="password" minlength="12" required autocomplete="new-password"><p class="small muted">Use a unique temporary password and share it privately. In production, replace this form with an expiring invitation link and require password setup.</p><button class="button primary full" type="submit">Create administrator</button></form>
+{% endblock %}
